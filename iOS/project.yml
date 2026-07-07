@@ -1,0 +1,75 @@
+name: Pillcheck
+options:
+  bundleIdPrefix: com.shimondeitel.medlog
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Pillcheck:
+    type: application
+    platform: iOS
+    sources:
+      - path: Pillcheck
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.medlog
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Pillcheck/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  PillcheckTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: PillcheckTests
+      - path: Pillcheck.storekit
+    dependencies:
+      - target: Pillcheck
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.medlog.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  PillcheckUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: PillcheckUITests
+    dependencies:
+      - target: Pillcheck
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.medlog.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Pillcheck:
+    build:
+      targets:
+        Pillcheck: all
+        PillcheckTests: [test]
+        PillcheckUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Pillcheck.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Pillcheck.storekit
+      targets:
+        - PillcheckTests
+        - PillcheckUITests
+    archive:
+      config: Release

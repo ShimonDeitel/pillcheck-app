@@ -1,0 +1,40 @@
+{
+  "identifier" : "Pillcheck",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {},
+  "subscriptionGroups" : [
+    {
+      "id" : "PILLCHECK_PRO_GROUP",
+      "localizations" : [],
+      "name" : "Pillcheck Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "PILLCHECK_PRO_MONTHLY",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Multiple Schedules + Adherence Chart",
+              "displayName" : "Pillcheck Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.medlog.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pillcheck Pro Monthly",
+          "subscriptionGroupID" : "PILLCHECK_PRO_GROUP",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
